@@ -32,28 +32,6 @@
  * |-- Clean Var
  */
 /**
- * 23-1113
- * 
- * * 'Backgorund' not any faster vs. 'forever' stack.
- * 
- * * 'Serial Print off' much faster 150ms to 8ms/ cpu_cycle
- */
-/**
- * Ultrasonic Sensor: 1
- * 
- * * Red-Wire 3-5v
- * 
- * ** TYJ does work but within 35cm and it adds 10cm (measures 10cm extra) too much, yet seems consistent.  Also power should come from its 5v and not 3.3v (not work) : ).
- * 
- * * HC-SR04P much more reliable even up to 70-80cm, and more accurate under 30cm not adding 10cm, yet more like 5 or so, seems as reliable as a LEGO EV3.  Also 'Show console Device' very nice to display LED values.  : )
- * 
- * * HC-SR04 w/ metal-bin on top: also very reliable up to 60cm, appears to be less accurate <= 60, flips to 4 when  > 30
- * 
- * * Tried Trig=P0, Echo=P1 not work
- * 
- * * Best Trig=P8 Digital Out, Echo=P0 Analog In= 50cm or less
- */
-/**
  * Important Notes
  * 
  * 22-0107-0940
@@ -550,6 +528,28 @@ function mode_Search_Reset_Func () {
         sensor_Compass_SearchDirection__Me_Total_Turn__Degrees__Int = 0
     }
 }
+/**
+ * 23-1113
+ * 
+ * * 'Backgorund' not any faster vs. 'forever' stack.
+ * 
+ * * 'Serial Print off' much faster 150ms to 8ms/ cpu_cycle
+ */
+/**
+ * Ultrasonic Sensor: 1
+ * 
+ * * Red-Wire 3-5v
+ * 
+ * ** TYJ does work but within 35cm and it adds 10cm (measures 10cm extra) too much, yet seems consistent.  Also power should come from its 5v and not 3.3v (not work) : ).
+ * 
+ * * HC-SR04P much more reliable even up to 70-80cm, and more accurate under 30cm not adding 10cm, yet more like 5 or so, seems as reliable as a LEGO EV3.  Also 'Show console Device' very nice to display LED values.  : )
+ * 
+ * * HC-SR04 w/ metal-bin on top: also very reliable up to 60cm, appears to be less accurate <= 60, flips to 4 when  > 30
+ * 
+ * * Tried Trig=P0, Echo=P1 not work
+ * 
+ * * Best Trig=P8 Digital Out, Echo=P0 Analog In= 50cm or less
+ */
 // * LIght Sensor #2:
 // 
 // * IR Sensor: MH-Sensor Series: TYJ D0 works yet need 5v, works w/ pin 13 :)+
