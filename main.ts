@@ -88,8 +88,12 @@ function xRay_DataMonitor_Func () {
     if (true) {
         _local_string_out = "Li L:" + do_NumberPadder_AsStringOut_Func(sensor_LightReflect_DigitalRaw_0or1Bool_Left_Int, 1, true) + " R:" + do_NumberPadder_AsStringOut_Func(sensor_LightReflect_DigitalRaw_0or1Bool_Right_Int, 1, true)
         if (sensor_Compass_SearchDirection_TurnClockwise_Bool) {
+            led.plot(1, 2)
+            led.plot(0, 2)
             _local_string_out = "" + _local_string_out + do_StringPadder_AsStringOut_Func(" -> ", 4)
         } else {
+            led.plot(3, 2)
+            led.plot(4, 2)
             _local_string_out = "" + _local_string_out + do_StringPadder_AsStringOut_Func(" <- ", 4)
         }
         quest_Dashboard.quest_Show_String_For_Oled_SmallFont_Fn(
@@ -827,8 +831,11 @@ if (true) {
     quest_Note_5.quest_Show_String_For_Note_Small_Fn(
     "Orig 20, but try 5 for quick testing, Moved back to 20, try 10 since in_between"
     )
+    quest_Note_5.quest_Show_String_For_Note_Small_Fn(
+    "try 20 too long, 15"
+    )
     // 22-0105 was 40, go smaller for faster testing: 10, too short: 20
-    sensor_SonarSoundEcho_Detect_Range_CM_INT = 5
+    sensor_SonarSoundEcho_Detect_Range_CM_INT = 15
     sensor_SonarSoundEcho_Range_Cm_Left_Int = 0
     sensor_SonarSoundEcho_Range_Cm_Right_Int = 0
 }
@@ -952,7 +959,9 @@ basic.forever(function () {
             "Clear Relocate Dots"
             )
             led.unplot(1, 2)
+            led.unplot(0, 2)
             led.unplot(3, 2)
+            led.unplot(4, 2)
         }
         if (true) {
             quest_Note_2.quest_Show_String_For_Note_Small_Fn(
